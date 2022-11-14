@@ -1,0 +1,24 @@
+.card {
+  width: 175px;
+  font-size: 12px;
+  position: relative;
+}
+.card-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: azure;
+  padding: 5px;
+}
+
+.k {
+  width: 100%;
+  border-radius: 9px;
+}
+.card-state {
+  display: flex;
+  align-items: center;
+}
+.star {
+  width: 10px;
+}

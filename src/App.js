@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+// import Contact from "./components/Contact";
+import data from "./data";
+import "./App.css";
 
-function App() {
+const App = () => {
+  // const data = {
+  //   img: "../katie-zaferes-hero.png",
+  //   rating: 5.0,
+  //   reviewCount: 6,
+  //   country: "USA",
+  //   title: "Life lessions with Katie Zaferes",
+  //   price: 136,
+  // };
+  const dealData = data.map((data) => {
+    return (
+      <Card
+        key={data.id}
+        title={data.title}
+        img={data.img}
+        rating={data.stats.rating}
+        reviewCount={data.stats.reviewCount}
+        country={data.country}
+        price={data.price}
+      ></Card>
+    );
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar></Navbar>
+      <Hero></Hero>
+      <section className="card-list">{dealData}</section>
     </div>
   );
-}
+};
 
 export default App;
